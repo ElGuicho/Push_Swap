@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/16 19:09:58 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/01/17 16:13:08 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int	push_swap(int argc, char **argv)
 	i = 1;
 	if (argc < 2)
 		return (0);
-	while (i < (argc - 1))
+	while (i < argc)
 	{
 		j = 0;
 		if ((argv[i][j] == '-') || (argv[i][j] == '+'))
 			j++;
-		while (argv[i])
+		while (argv[i][j] != '\0')
 		{
 			if (ft_isdigit(argv[i][j]) == 1)
 				j++;

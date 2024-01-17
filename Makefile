@@ -6,7 +6,7 @@
 #    By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:45:44 by gmunoz            #+#    #+#              #
-#    Updated: 2024/01/16 19:25:42 by gmunoz           ###   ########.fr        #
+#    Updated: 2024/01/17 16:39:48 by gmunoz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,11 @@ all: $(NAME)
 
 # Compile source files into object files
 $(LIBFT):
-	@$(MAKE) -C libft
+	@$(MAKE) -C Libft
 
 # Link object files into the executable
 $(NAME): $(OBJS)
-	@$(MAKE) -C libft
+	@$(MAKE) -C Libft
 	ar -rcs $(NAME) $(OBJS)
 	ranlib $(NAME)
 	
@@ -46,12 +46,12 @@ $(NAME): $(OBJS)
 
 # Clean up generated files
 clean:
-	@$(MAKE) clean -C libft
+	@$(MAKE) clean -C Libft
 	rm -f $(OBJS)
 
 #
 fclean:
-	@$(MAKE) fclean -C libft
+	@$(MAKE) fclean -C Libft
 	rm -f $(NAME) $(OBJS)
 
 # Re-compile everything
