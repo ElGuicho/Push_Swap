@@ -6,8 +6,12 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:23 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/24 14:13:28 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/02/13 17:56:28 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int move500(int argc, char **argv)
+{
+}
