@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:46:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/02/16 18:31:24 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/03/26 20:00:10 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 typedef  struct push_list
 {
-	int	*nums;
 	int	*intargs;
 	int	n_args;
 }	swap_list;
