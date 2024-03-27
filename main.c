@@ -15,9 +15,14 @@
 
 int	main(int argc, char **argv)
 {
-	if (push_swap(argc, argv) == 1)
-		write(1, "OK", 2);
+	int	ifok;
+
+	ifok = push_swap(argc, argv);
+	if (ifok == 1)
+		write(1, "OK\n", 3);
+	else if (ifok == 0)
+		write(1, "Malloc error\n", 13);
 	else
-		write(1, "Error\n", 6);
+		write(1, "Argument error\n", 15);
 	return (0);
 }
