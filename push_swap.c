@@ -121,9 +121,14 @@ int	push_swap(int argc, char **argv)
 
 	i = 1;
 	nums = malloc(sizeof(swap_list));
+	if (!nums)
+		return (0);
 	n_args = arg_count(argc, argv, i);
 	if (n_args == -1)
-		return (-1);
+		return (free(nums), -1);
+	nums->intargs = malloc(sizeof(n_args * int));
+	if (nums->intargs == NULL)
+		return (free(nums), 0);
 	nums->n_args = n_args;
 	argtoint(nums, argc, argv, i);
 	/*if (n_args <= 3)
