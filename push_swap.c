@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/03/26 20:22:51 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/03/29 14:11:55 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,29 @@ int	arg_count(int argc, char **argv, int i)
 
 int	arg_space(swap_list *nums, char *arg_w_spc, int nargs_in_lst, int i)
 {
+	int arg_len;
+	char	*start_nb;
+
+	arg_len = ft_strlen(arg_w_spc);
 	nums->intargs[nargs_in_lst] = ft_atoi(arg_w_spc);
-	printf ("argv after inttolst = %d\n", nums->intargs[nargs_in_lst]);
+	printf ("inttolst = %d\n", nums->intargs[nargs_in_lst]);
+	printf ("nargs_in_lst = %d\n", nargs_in_lst);
+	printf ("strlen = %ld\n", ft_strlen(arg_w_spc));
+	
 	nargs_in_lst++;
-	while (arg_w_spc[i] != '\0')
+	while (i < arg_len)
 	{
-		i = 1;
-		while (arg_w_spc[i - 1] != ' ' || arg_w_spc[i] != '\0')
+		printf ("arg_w_spc = %c\n", arg_w_spc[i]);
+		while (arg_w_spc[i - 1] != ' ' && arg_w_spc[i] != '\0')
+		{
 			i++;
-		nums->intargs[nargs_in_lst] = ft_atoi(arg_w_spc + i);
+			//printf ("arg_w_spc_loop = %c\n", arg_w_spc[i]);
+		}
+		printf ("arg_w_spc_after = %c\n", arg_w_spc[i]);
+		start_nb = arg_w_spc + i;
+		printf ("start_nb = %c\n", start_nb[0]);
+		nums->intargs[nargs_in_lst] = ft_atoi(start_nb);
+		i++;
 		nargs_in_lst++;
 	}
 	return (nargs_in_lst);
@@ -105,9 +119,10 @@ void	argtoint(swap_list *nums, int argc, char **argv, int i)
 			j++;
 		}
 		printf ("argv before inttolst = %s\n", argv[i]);
+		//printf ("has_space = %d", has_space);
 		if (has_space == 0)
 			nums->intargs[nargs_in_lst] = ft_atoi(argv[i]);
-		printf ("after inttolst = %d\n", nargs_in_lst);
+		printf ("after inttolst = %d\n", nums->intargs[nargs_in_lst]);
 		nargs_in_lst++;
 		i++;
 	}
@@ -126,7 +141,7 @@ int	push_swap(int argc, char **argv)
 	n_args = arg_count(argc, argv, i);
 	if (n_args == -1)
 		return (free(nums), -1);
-	nums->intargs = malloc(sizeof(n_args * int));
+	nums->intargs = malloc(sizeof(int *));
 	if (nums->intargs == NULL)
 		return (free(nums), 0);
 	nums->n_args = n_args;
