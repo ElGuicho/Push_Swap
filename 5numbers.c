@@ -6,13 +6,24 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:04 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/02/15 21:44:10 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/03/29 19:48:00 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int move5(int argc, char **argv)
+int move5(swap_list *nums, int *n)
 {
+	if (n[0] > n[1] > n[2] > n[3] > n[4])
+			write(1, "ra\n", 3), 1;
 	return(1);
 }
+
+5	5	5	5	5	5	5	5	5	5
+4	4	4	4	4	4	
+3	3	2	2	1	1
+2	1	1	3	2	3
+1	2	3	1	3	2
+
+Completed
+------------------------
