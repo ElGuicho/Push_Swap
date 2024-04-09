@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3numbers.c                                         :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:12:51 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 15:50:02 by gmunoz           ###   ########.fr       */
+/*   Created: 2024/04/09 12:49:56 by gmunoz            #+#    #+#             */
+/*   Updated: 2024/04/09 15:12:25 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move3(swap_list *nums, int *n)
+void	pa(swap_list *nums)
 {
-	if (nums->n_args == 2 && n[0] > n[1])
-		sa(nums);
-	if (n[0] > n[1] && n[0] < n[2])
-		sa(nums);
-	else if (n[0] > n[1] && n[1] < n[2])
-		ra(nums);
-	else if (n[0] > n[1])
-	{
-		ra(nums);
-		sa(nums);
-	}
-	else if (n[0] > n[2])
-		rra(nums);
-	else if (n[0] < n[2])
-	{
-		sa(nums);
-		ra(nums);
-	}
-}
+	int	i;
 
-/*
-Completed	1 2 0
-------------------------
-5	8	8	5	3
-3	3	5	8	8
-8	5	3	3	5 
-*/
+	nums->n_args = nums->n_args + 1;
+	nums->b_n_args = nums->b_n_args - 1;
+	i = nums->n_args - 1;
+	while (i != 0)
+	{
+		nums->column_a[i] = nums->column_a[i - 1];
+		i--;
+	}
+	nums->column_a[0] = nums->column_b[0];
+	while (i < nums->b_n_args)
+	{
+		nums->column_b[i] = nums->column_b[i + 1];
+		i++;
+	}
+	write (1, "pa\n", 3);
+}

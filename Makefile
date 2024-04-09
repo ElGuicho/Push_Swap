@@ -6,7 +6,7 @@
 #    By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:45:44 by gmunoz            #+#    #+#              #
-#    Updated: 2024/03/29 21:41:26 by gmunoz           ###   ########.fr        #
+#    Updated: 2024/04/09 13:51:47 by gmunoz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Source files
-SRCS = push_swap.c 3numbers.c 5numbers.c
+SRCS = push_swap.c sa.c ra.c rra.c pa.c pb.c 3numbers.c 5numbers.c
 #100numbers.c 500numbers.c
 
 # Object files
