@@ -6,13 +6,13 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:23 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/02/15 21:44:20 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/12 15:27:45 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int move500(int argc, char **argv)
+void	move500(swap_list *nums, int *n)
 {
 	return(1);
 }

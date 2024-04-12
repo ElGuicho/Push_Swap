@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:46:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 13:47:01 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/12 15:12:36 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef  struct push_list
 {
 	int	*column_a;
 	int	*column_b;
+	int	*ordered_column;
 	int	n_args;
 	int	b_n_args;
 	int	ss;
@@ -45,7 +46,9 @@ void	pa(swap_list *nums);
 void	pb(swap_list *nums);
 void	move3(swap_list *nums, int *n);
 void	move5(swap_list *nums, int *n);
-int move100(swap_list *nums, int *n);
-int move500(swap_list *nums, int *n);
+void	move100(swap_list *nums, int *n);
+void	move500(swap_list *nums, int *n);
+void	sort_nums(swap_list *nums);
+void	num_position(swap_list *nums);
 
 #endif

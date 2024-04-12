@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:04 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 15:56:02 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/12 15:32:28 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,25 @@ void	four_args(swap_list *nums, int *n)
 void	move5(swap_list *nums, int *n)
 {
 	if (nums->n_args == 4)
+	{
 		four_args(nums, n);
-	else if (n[0] < n[1] && n[0] < n[2] && n[0] < n[3] && n[0] < n[4])
-		write (1, "pb\n", 3);
-	else if (n[1] < n[0] && n[1] < n[2] && n[1] < n[3] && n[1] < n[4])
-		write (1, "pb\n", 3);
-	
+		return ;
+	}
+	if (n[1] < n[0] && n[1] < n[2] && n[1] < n[3] && n[1] < n[4])
+		ra(nums);
+	else if (n[2] < n[0] && n[2] < n[1] && n[2] < n[3] && n[2] < n[4])
+	{
+		ra(nums);
+		ra(nums);
+	}
+	else if (n[3] < n[0] && n[3] < n[1] && n[3] < n[2] && n[3] < n[4])
+	{
+		rra(nums);
+		rra(nums);
+	}
+	else if (n[4] < n[0] && n[4] < n[1] && n[4] < n[2] && n[4] < n[3])
+		rra(nums);
+	pb(nums);
+	four_args(nums, nums->column_a);
+	pa(nums);
 }
