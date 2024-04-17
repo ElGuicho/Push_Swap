@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/12 15:30:11 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 13:19:09 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,9 +189,11 @@ int	push_swap(int argc, char **argv)
 		move3(nums, nums->column_a);
 	else if (n_args <= 5 && n_args > 3)
 		move5(nums, nums->column_a);
-	/*else if (n_args <= 100 && n_args > 5)
-		move100(nums, nums->column_a);
-	else if (n_args <= 500 && n_args > 100)
+	else if (n_args <= 100 && n_args > 5)
+		move100(nums);
+	/*else if (n_args <= 500 && n_args > 100)
 		move500(nums, nums->column_a); */
 	return (1);
 }
+
+//ft_split de espacios

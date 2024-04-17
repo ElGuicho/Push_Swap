@@ -6,13 +6,13 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:56:55 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/15 19:20:45 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 14:50:58 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *str)
+int	printf_strlen(const char *str)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ int	countn(unsigned int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*printf_itoa(int n)
 {
 	char	*ptr;
 	int		i;
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	i = countn(n);
-	ptr = ft_calloc(i + 1, 1);
+	ptr = printf_calloc(i + 1, 1);
 	if (!ptr)
 		return (NULL);
 	ptr[i] = '\0';
@@ -65,7 +65,7 @@ char	*ft_itoa(int n)
 	return (ptr);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*printf_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 	int		i;
@@ -82,7 +82,7 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
-int	ft_putstr_fd(char *s, int fd)
+int	printf_putstr_fd(char *s, int fd)
 {
 	int	i;
 
@@ -93,5 +93,5 @@ int	ft_putstr_fd(char *s, int fd)
 			return (-1);
 		i++;
 	}
-	return (ft_strlen(s));
+	return (printf_strlen(s));
 }

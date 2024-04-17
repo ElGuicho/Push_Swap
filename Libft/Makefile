@@ -6,7 +6,7 @@
 #    By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 12:03:13 by gmunoz            #+#    #+#              #
-#    Updated: 2023/10/05 18:10:11 by gmunoz           ###   ########.fr        #
+#    Updated: 2024/04/17 14:31:27 by gmunoz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,12 @@ NAME = libft.a
 all: $(NAME)
 
 # Compile source files into object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(FT_PRINTF):
+	@$(MAKE) -C ft_printf
 
 # Link object files into the executable
 $(NAME): $(OBJS)
+	@$(MAKE) -C ft_printf
 	ar -rcs $(NAME) $(OBJS)
 	ranlib $(NAME)
 
@@ -58,10 +59,12 @@ bonus: $(BNSOBJS)
 
 # Clean up generated files
 clean:
+	@$(MAKE) clean -C ft_printf
 	rm -f $(OBJS) $(BNSOBJS)
 
 #
 fclean:
+	@$(MAKE) fclean -C ft_printf
 	rm -f $(NAME) $(OBJS) $(BNSOBJS)
 
 # Re-compile everything

@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:44:31 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/12 15:25:47 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 15:07:42 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,24 @@ void	num_position(swap_list *nums)
 
 	i = 0;
 	j = 0;
-	while (j < nums->n_args)
+	while (j < nums->b_n_args)
 	{
-		if (nums->column_a[j] != nums->ordered_column[i])
+		if (nums->column_b[j] != nums->ordered_column[i])
 			i++;
 		else
 		{
-			nums->column_a[j] = i;
+			nums->column_b[j] = i;
 			i = 0;
 			j++;
 		}
+	}
+	i = 0;
+	j = nums->b_n_args;
+	while (j > 0)
+	{
+		ft_printf("column b[%d] = %d\n", i, nums->column_b[i]);
+		i++;
+		j--;
 	}
 }
 
@@ -48,10 +56,18 @@ void	sort_nums(swap_list *nums)
 	
 	i = 0;
 	j = 0;
-	nums->ordered_column = nums->column_a;
-	while (i < nums->n_args)
+	nums->ordered_column = nums->column_b;
+	j = nums->b_n_args;
+	while (j > 0)
 	{
-		while (j < nums->n_args - 1)
+		ft_printf("colummn bf[%d] = %d\n", i, nums->column_b[i]);
+		i++;
+		j--;
+	}
+	j = 0;
+	while (i < nums->b_n_args)
+	{
+		while (j < nums->b_n_args - 1)
 		{
 			if (nums->ordered_column[j] > nums->ordered_column[j + 1])
 				swap(nums, j);
@@ -59,5 +75,13 @@ void	sort_nums(swap_list *nums)
 		}
 		j = 0;
 		i++;
+	}
+	i = 0;
+	j = nums->b_n_args;
+	while (j > 0)
+	{
+		ft_printf("ordered colummn[%d] = %d\n", i, nums->ordered_column[i]);
+		i++;
+		j--;
 	}
 }

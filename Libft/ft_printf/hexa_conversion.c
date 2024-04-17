@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:47:54 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/15 18:28:38 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 14:49:39 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ptr_to_hexa(unsigned long str)
 	int		i;
 
 	i = countlhexa(str);
-	ptr = ft_calloc(i + 1, 1);
+	ptr = printf_calloc(i + 1, 1);
 	if (!ptr)
 		return (NULL);
 	ptr[i] = '\0';
@@ -67,7 +67,7 @@ char	*dec_to_hexalower(unsigned int str)
 	int		i;
 
 	i = counthexa(str);
-	ptr = ft_calloc(i + 1, 1);
+	ptr = printf_calloc(i + 1, 1);
 	if (!ptr)
 		return (NULL);
 	ptr[i] = '\0';
@@ -89,7 +89,7 @@ char	*dec_to_hexaupper(unsigned int str)
 	int		i;
 
 	i = counthexa(str);
-	ptr = ft_calloc(i + 1, 1);
+	ptr = printf_calloc(i + 1, 1);
 	if (!ptr)
 		return (NULL);
 	ptr[i] = '\0';

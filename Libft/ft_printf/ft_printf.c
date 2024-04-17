@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:04:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/16 14:43:31 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 14:42:19 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	format(va_list args, const char *str, int nbytes)
 	else if (str[nbytes] == 'X')
 		i = ifhexa_caps(args, i);
 	else if (str[nbytes] == '%')
-		i = ft_putstr_fd("%", 1);
+		i = printf_putstr_fd("%", 1);
 	return (i);
 }
 

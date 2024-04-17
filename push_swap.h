@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:46:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/12 15:12:36 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 14:34:49 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "Libft/libft.h"
+# include "Libft/ft_printf/ft_printf.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -46,7 +47,7 @@ void	pa(swap_list *nums);
 void	pb(swap_list *nums);
 void	move3(swap_list *nums, int *n);
 void	move5(swap_list *nums, int *n);
-void	move100(swap_list *nums, int *n);
+void	move100(swap_list *nums);
 void	move500(swap_list *nums, int *n);
 void	sort_nums(swap_list *nums);
 void	num_position(swap_list *nums);

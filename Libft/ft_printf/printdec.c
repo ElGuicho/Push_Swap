@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:09:40 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/01/16 14:18:56 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 14:51:16 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ifdec(va_list args, int i)
 	if (n < 0)
 		i++;
 	if (n == -2147483648)
-		return (ft_putstr_fd("-2147483648", 1));
+		return (printf_putstr_fd("-2147483648", 1));
 	if (n == 0)
-		return (ft_putstr_fd("0", 1));
-	str = ft_itoa(n);
+		return (printf_putstr_fd("0", 1));
+	str = printf_itoa(n);
 	if (!str)
 		return (-1);
-	i = i + ft_strlen(str);
-	if (ft_putstr_fd(str, 1) == -1)
+	i = i + printf_strlen(str);
+	if (printf_putstr_fd(str, 1) == -1)
 		i = -1;
 	free (str);
 	return (i);
