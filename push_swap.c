@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/17 13:19:09 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/17 19:27:57 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,13 +171,13 @@ int	push_swap(int argc, char **argv)
 	n_args = arg_count(argc, argv, i);
 	if (n_args == -1)
 		return (free(nums), -1);
-	nums->column_a = malloc(sizeof(int *));
+	nums->column_a = malloc(sizeof(int) * n_args);
 	if (nums->column_a == NULL)
 		return (free(nums), 0);
-	nums->column_b = malloc(sizeof(int *));
+	nums->column_b = malloc(sizeof(int) * n_args);
 	if (nums->column_b == NULL)
 		return (free(nums), 0);
-	nums->ordered_column = malloc(sizeof(int *));
+	nums->ordered_column = malloc(sizeof(int) * n_args);
 	if (nums->ordered_column == NULL)
 		return (free(nums), 0);
 	nums->n_args = n_args;
