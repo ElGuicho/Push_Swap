@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/17 19:27:57 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/18 17:09:15 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,4 +196,4 @@ int	push_swap(int argc, char **argv)
 	return (1);
 }
 
-//ft_split de espacios
+//ft_split de espacios para arg_space
