@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:24:30 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 15:40:00 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/24 18:30:21 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	rb(swap_list *nums)
 	
 	i = 0;
 	temp = nums->column_b[0];
-	while (i < nums->b_n_args)
+	while (i < nums->b_n_args - 1)
 	{
 		nums->column_b[i] = nums->column_b[i + 1];
 		i++;

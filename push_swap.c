@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/18 17:09:15 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/04/24 18:39:30 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,29 +86,19 @@ int	arg_space(swap_list *nums, char *arg_w_spc, int nargs_in_lst, int i)
 
 	arg_len = ft_strlen(arg_w_spc);
 	nums->column_a[nargs_in_lst] = ft_atoi(arg_w_spc);
-	//printf ("inttolst = %d\n", nums->column_a[nargs_in_lst]);
-	//printf ("nargs_in_lst = %d\n", nargs_in_lst);
-	//printf ("strlen = %ld\n", ft_strlen(arg_w_spc));
 	
 	nargs_in_lst++;
 	i = i + digits_in_nb(arg_w_spc, i, arg_len);
 	while (i < arg_len)
 	{
-		//printf ("arg_w_spc = %c\n", arg_w_spc[i]);
 		while (arg_w_spc[i - 1] != ' ' && arg_w_spc[i] != '\0')
 		{
 			i++;
-			//printf ("arg_w_spc_loop = %c\n", arg_w_spc[i]);
 		}
-		
-		//printf ("arg_w_spc_after = %c\n", arg_w_spc[i]);
 		start_nb = arg_w_spc + i;
-		//printf ("start_nb = %c\n", start_nb[0]);
 		nums->column_a[nargs_in_lst] = ft_atoi(start_nb);
-		//printf ("i before adding digits = %d\n", i);
 		i = i + digits_in_nb(arg_w_spc, i, arg_len);
 		nargs_in_lst++;
-		//printf ("nargs = %d and i = %d\n", nargs_in_lst, i);
 	}
 	return (nargs_in_lst);
 }
@@ -128,19 +118,14 @@ void	argtoint(swap_list *nums, int argc, char **argv, int i)
 		{
 			if (argv[i][j] == ' ')
 			{
-				//printf ("argv before arg_space = %s\n", argv[i]);
 				nargs_in_lst = arg_space(nums, argv[i], nargs_in_lst, 0) - 1;
-				//printf ("args in lst after arg_space = %d\n", nargs_in_lst);
 				has_space = 1;
 				break ;
 			}
 			j++;
 		}
-		//printf ("argv before inttolst = %s\n", argv[i]);
-		//printf ("has_space = %d", has_space);
 		if (has_space == 0)
 			nums->column_a[nargs_in_lst] = ft_atoi(argv[i]);
-		//printf ("after inttolst = %d\n", nums->column_a[nargs_in_lst]);
 		nargs_in_lst++;
 		i++;
 	}
@@ -193,6 +178,14 @@ int	push_swap(int argc, char **argv)
 		move100(nums);
 	/*else if (n_args <= 500 && n_args > 100)
 		move500(nums, nums->column_a); */
+	i = 0;
+	n_args = nums->n_args;
+	while (n_args > 0)
+	{
+		ft_printf("final list[%d] = %d\n", i, nums->column_a[i]);
+		i++;
+		n_args--;
+	}
 	return (1);
 }
 
