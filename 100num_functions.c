@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:44:31 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/24 18:44:02 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/08 18:03:30 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ void	sort_nums(swap_list *nums, int *column_b)
 void	last_nbs(swap_list *nums, int less_than_5)
 {
 	int	i;
-	int	j;
-	int	k;
 
 	i = less_than_5;
 	while (less_than_5 > 0)
@@ -99,9 +97,9 @@ void	last_nbs(swap_list *nums, int less_than_5)
 		pa(nums);
 		less_than_5--;
 	}
-	k = 0;
+	/*	k = 0;
 	j = nums->n_args;
-	/* while (j > 0)
+	while (j > 0)
 	{
 		ft_printf("column a[%d] = %d\n", k, nums->column_a[k]);
 		k++;
