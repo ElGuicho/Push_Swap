@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:03:04 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 13:52:32 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/10 16:15:21 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sa(swap_list *nums)
 	nums->column_a[1] = temp;
 	if (nums->ss == 0)
 		write (1, "sa\n", 3);
+	nums->n_steps++;
 }
 
 void	sb(swap_list *nums)
@@ -33,6 +34,7 @@ void	sb(swap_list *nums)
 	if (nums->ss == 0)
 		write (1, "sb\n", 3);
 	nums->ss = 0;
+	nums->n_steps++;
 }
 
 void	ss(swap_list *nums)
@@ -41,4 +43,5 @@ void	ss(swap_list *nums)
 	write (1, "ss\n", 3);
 	sa(nums);
 	sb(nums);
+	nums->n_steps++;
 }

@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:50:02 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/09 15:10:48 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/10 16:13:28 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	pb(swap_list *nums)
 		i++;
 	}
 	write (1, "pb\n", 3);
+	nums->n_steps++;
 }
 //4 8 9 6
 	/* printf("nums[0] = %d\n", nums->column_a[0]);

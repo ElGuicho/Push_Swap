@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/24 18:39:30 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/10 16:16:18 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ int	push_swap(int argc, char **argv)
 	nums = malloc(sizeof(swap_list));
 	if (!nums)
 		return (0);
+	nums->n_steps = 0;
 	n_args = arg_count(argc, argv, i);
 	if (n_args == -1)
 		return (free(nums), -1);
@@ -186,6 +187,7 @@ int	push_swap(int argc, char **argv)
 		i++;
 		n_args--;
 	}
+	ft_printf("n_steps = %d\n", nums->n_steps);
 	return (1);
 }
 

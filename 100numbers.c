@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/04/24 18:20:57 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/10 16:08:21 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void	move100(swap_list *nums)
 	{
 		while (b != 5)
 		{
+			//ft_printf("sort5 = %d\n", sort5);
+			ft_printf("nums->column_b[i] = %d\n", nums->column_b[i]);
+			ft_printf("i = %d\n", i);
 			if (sort5 < 0)
 			{
 				last_nbs(nums, sort5 + 5);
@@ -53,12 +56,15 @@ void	move100(swap_list *nums)
 					}
 					pa(nums);
 				}
+				i--;
 				b++;
+				ft_printf("b = %d\n", b);
 			}
 			i++;
 		}
 		hundred_move5(nums, nums->column_a, 5);
 		sort5 -= 5;
 		b = 0;
+		i = 0;
 	}
 }
