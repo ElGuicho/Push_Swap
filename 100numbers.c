@@ -6,65 +6,61 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/10 16:08:21 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/14 18:44:55 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	placed_column_b(swap_list *nums)
+{ 
+	int min;
+	if (nums->b_n_args < 2)
+		return ;
+	while (nums->column_a[0] < nums->column_b[0])
+	{
+		if (nums->column_b[nums->b_n_args - 1] > nums->column_b[0])
+	}
+}
+
 void	move100(swap_list *nums)
 {
 	int	i;
-	int	sort5;
-	int	b;
+	int	j;
+	int	sort20;
+	int	a_args;
 	
-	b = 0;
-	i = nums->n_args;
-	sort5 = i - 5;
-	//ft_printf("sort5 = %d\n", sort5);
-	while (i > 0)
-	{
-		pb(nums);
-		i--;
-	}
-	sort_nums(nums, nums->column_b);
+	sort20 = 19;
+	a_args = nums->n_args;
+	sort_nums(nums, nums->column_a);
 	num_position(nums);
-	while (nums->b_n_args != 0)
+	while (nums->n_args > 0)
 	{
-		while (b != 5)
-		{
-			//ft_printf("sort5 = %d\n", sort5);
-			ft_printf("nums->column_b[i] = %d\n", nums->column_b[i]);
-			ft_printf("i = %d\n", i);
-			if (sort5 < 0)
-			{
-				last_nbs(nums, sort5 + 5);
-				return ;
-			}
-			if (nums->column_b[i] >= sort5)
-			{
-				if (nums->column_b[0] >= sort5)
-					pa(nums);
-				else
-				{
-					while (nums->column_b[0] < sort5)
-					{
-						if (i < nums->b_n_args / 2)
-							rb(nums);
-						else
-							rrb(nums);	
-					}
-					pa(nums);
-				}
-				i--;
-				b++;
-				ft_printf("b = %d\n", b);
-			}
-			i++;
-		}
-		hundred_move5(nums, nums->column_a, 5);
-		sort5 -= 5;
-		b = 0;
 		i = 0;
+		j = nums->n_args;
+		while (nums->column_a[i] > sort20)
+			i++;
+		while (nums->column_a[j] > sort20)
+			j--;
+		if (i < nums->n_args - j + 1)
+		{
+			while (i > 0)
+			{
+				ra(nums);
+				i--;
+			}
+		}
+		else
+		{
+			while (j < nums->n_args + 1)
+			{
+				rra(nums);
+				j++;
+			}
+		}
+		placed_column_b(nums);
+		pb(nums);
+		if (nums->n_args = a_args - sort20 + 1)
+			sort20 = sort20 + 20;
 	}
 }
