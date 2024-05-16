@@ -6,21 +6,62 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/14 18:44:55 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/16 19:26:27 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	placed_column_b(swap_list *nums)
-{ 
-	int min;
+void	correct_pos(swap_list *nums, int i)
+{
+	if (nums->b_n_args - i < i)
+	{
+		while (i < nums->b_n_args)
+		{
+			rrb(nums);
+			i++;
+		}
+	}
+	else
+	{
+		while (i > 0)
+		{
+			rb(nums);
+			i--;
+		}
+	}
+}
+
+void	placed_column_b(swap_list *nums, int n, int i, int j)
+{
 	if (nums->b_n_args < 2)
 		return ;
-	while (nums->column_a[0] < nums->column_b[0])
+	if (nums->b_n_args == 2 && nums->column_b[0] < nums->column_b[1])
+		rb(nums);
+	while (nums->column_b[i] > n && i < nums->b_n_args)
+		i++;
+	if (i == 0 && (nums->column_b[0] > nums->column_b[j] || nums->column_b[j] > n))
+		return ;
+	if (i == 0 && nums->column_b[j] < n)
 	{
-		if (nums->column_b[nums->b_n_args - 1] > nums->column_b[0])
+		while (nums->column_b[j] < n && j > 0)
+			j--;
+		if (j == 0)
+		{
+			while (nums->column_b[j] > nums->column_b[j + 1])
+				j++;
+		}
+		correct_pos(nums, j + 1);
 	}
+	else if (i == nums->b_n_args)
+	{
+		i = 0;
+		while (nums->column_b[i] > nums->column_b[i + 1])
+			i++;
+		correct_pos(nums, i + 1);
+	}
+	else 
+		correct_pos(nums, i);
 }
 
 void	move100(swap_list *nums)
@@ -42,7 +83,7 @@ void	move100(swap_list *nums)
 			i++;
 		while (nums->column_a[j] > sort20)
 			j--;
-		if (i < nums->n_args - j + 1)
+		if (i <= nums->n_args - j + 1)
 		{
 			while (i > 0)
 			{
@@ -58,9 +99,27 @@ void	move100(swap_list *nums)
 				j++;
 			}
 		}
-		placed_column_b(nums);
+		placed_column_b(nums, nums->column_a[0], 0, nums->b_n_args - 1);
 		pb(nums);
-		if (nums->n_args = a_args - sort20 + 1)
+		i = 0;
+		j = nums->b_n_args;
+		while (j > 0)
+		{
+			ft_printf("column b[%d] = %d\n", i, nums->column_b[i]);
+			i++;
+			j--;
+		}
+		if (nums->n_args == a_args - sort20 + 1)
 			sort20 = sort20 + 20;
 	}
+	//move5(nums, nums->column_a);
+	i = 0;
+	while (nums->column_b[i] > nums->column_b[i + 1])
+		i++;
+	correct_pos(nums, i + 1);
+	while (nums->b_n_args > 0)
+		pa(nums);
 }
+
+/* en vez de ordenar los numeros en b y luego pasarlos a a, irlos ordenando mientras
+los paso a a. */
