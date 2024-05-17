@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:46:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/10 16:12:24 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/17 18:06:27 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	pb(swap_list *nums);
 void	move3(swap_list *nums, int *n);
 void	move5(swap_list *nums, int *n);
 void	move100(swap_list *nums);
-void	move500(swap_list *nums, int *n);
+void	move500(swap_list *nums);
 void	hundred_move3(swap_list *nums, int *n, int i);
 void	hundred_move5(swap_list *nums, int *n, int i);
 
@@ -63,5 +63,7 @@ int in_order(swap_list *nums, int *n);
 void	sort_nums(swap_list *nums, int *column_b);
 void	num_position(swap_list *nums);
 void	last_nbs(swap_list *nums, int less_than_5);
+void	correct_pos(swap_list *nums, int i);
+void	placed_column_a(swap_list *nums, int n, int i, int j);
 
 #endif

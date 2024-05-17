@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/10 16:16:18 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/17 18:03:58 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	argtoint(swap_list *nums, int argc, char **argv, int i)
 	j = 0;
 	while (i < argc)
 	{
-	has_space = 0;
+		has_space = 0;
 		while (argv[i][j] != '\0')
 		{
 			if (argv[i][j] == ' ')
@@ -177,8 +177,8 @@ int	push_swap(int argc, char **argv)
 		move5(nums, nums->column_a);
 	else if (n_args <= 100 && n_args > 5)
 		move100(nums);
-	/*else if (n_args <= 500 && n_args > 100)
-		move500(nums, nums->column_a); */
+	else if (n_args <= 500 && n_args > 100)
+		move500(nums);
 	i = 0;
 	n_args = nums->n_args;
 	while (n_args > 0)
