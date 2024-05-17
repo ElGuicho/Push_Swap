@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 12:24:30 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/10 16:14:10 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/17 14:50:13 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ void	rr(swap_list *nums)
 	write (1, "rr\n", 3);
 	ra(nums);
 	rb(nums);
-	nums->n_steps++;
+	nums->n_steps--;
 }
