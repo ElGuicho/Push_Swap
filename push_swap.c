@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/17 18:03:58 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/22 15:47:01 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	arg_count(int argc, char **argv, int i)
 		}
 		i++;
 	}
-	printf ("total args: %d\n", n_args);
+	//printf ("total args: %d\n", n_args);
 	return (n_args);
 }
 
@@ -110,9 +110,9 @@ void	argtoint(swap_list *nums, int argc, char **argv, int i)
 	int	has_space;
 
 	nargs_in_lst = 0;
-	j = 0;
 	while (i < argc)
 	{
+		j = 0;
 		has_space = 0;
 		while (argv[i][j] != '\0')
 		{
@@ -179,7 +179,7 @@ int	push_swap(int argc, char **argv)
 		move100(nums);
 	else if (n_args <= 500 && n_args > 100)
 		move500(nums);
-	i = 0;
+	/* i = 0;
 	n_args = nums->n_args;
 	while (n_args > 0)
 	{
@@ -187,7 +187,7 @@ int	push_swap(int argc, char **argv)
 		i++;
 		n_args--;
 	}
-	ft_printf("n_steps = %d\n", nums->n_steps);
+	ft_printf("n_steps = %d\n", nums->n_steps); */
 	return (1);
 }
 

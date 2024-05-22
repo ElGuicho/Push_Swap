@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/17 18:28:12 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/22 14:49:33 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	placed_column_a(swap_list *nums, int n, int i, int j)
 		i++;
 	if (i == 0 && (nums->column_a[0] < nums->column_a[j] || nums->column_a[j] < n))
 	{
-		printf("n = %d\n", n);
+		//printf("n = %d\n", n);
 		return ;
 	}
 	if (i == 0 && nums->column_a[j] > n)
@@ -104,14 +104,14 @@ void	move100(swap_list *nums)
 		pb(nums);
 		if (nums->b_n_args > 60 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 60))
 			rb(nums);
-		i = 0;
+		/* i = 0;
 		j = nums->b_n_args;
 		while (j > 0)
 		{
 			ft_printf("column b[%d] = %d\n", i, nums->column_b[i]);
 			i++;
 			j--;
-		}
+		} */
 		if (nums->n_args == a_args - sort20 + 1)
 			sort20 = sort20 + 30;
 	}
@@ -135,14 +135,14 @@ void	move100(swap_list *nums)
 		}
 		placed_column_a(nums, nums->column_b[0], 0, nums->n_args - 1);
 		pa(nums);
-		i = 0;
+		/* i = 0;
 		j = nums->n_args;
 		while (j > 0)
 		{
 			ft_printf("column a[%d] = %d\n", i, nums->column_a[i]);
 			i++;
 			j--;
-		}
+		} */
 	}
 	j = nums->n_args - 1;
 	while (nums->column_a[j] != 0)
@@ -157,6 +157,3 @@ void	move100(swap_list *nums)
 	while (nums->b_n_args > 0)
 		pa(nums); */
 }
-
-/* en vez de ordenar los numeros en b y luego pasarlos a a, irlos ordenando mientras
-los paso a a. */

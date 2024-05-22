@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:23 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/17 18:06:20 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/22 15:56:25 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	move500(swap_list *nums)
 	int	j;
 	int	sort20;
 	int	a_args;
-	
-	ft_printf("a\n");
+
 	sort20 = 99;
 	a_args = nums->n_args;
 	sort_nums(nums, nums->column_a);
@@ -50,14 +49,14 @@ void	move500(swap_list *nums)
 		pb(nums);
 		if (nums->b_n_args > 100 && (nums->column_b[0] < sort20 + 50 && nums->column_b[0] > 100))
 			rb(nums);
-		i = 0;
+		/* i = 0;
 		j = nums->b_n_args;
 		while (j > 0)
 		{
 			ft_printf("column b[%d] = %d\n", i, nums->column_b[i]);
 			i++;
 			j--;
-		}
+		} */
 		if (nums->n_args == a_args - sort20 + 1)
 			sort20 = sort20 + 100;
 	}
@@ -81,14 +80,14 @@ void	move500(swap_list *nums)
 		}
 		placed_column_a(nums, nums->column_b[0], 0, nums->n_args - 1);
 		pa(nums);
-		i = 0;
+		/* i = 0;
 		j = nums->n_args;
 		while (j > 0)
 		{
 			ft_printf("column a[%d] = %d\n", i, nums->column_a[i]);
 			i++;
 			j--;
-		}
+		} */
 	}
 	j = nums->n_args - 1;
 	while (nums->column_a[j] != 0)
