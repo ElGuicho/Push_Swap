@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/22 14:49:33 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/22 19:04:58 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,21 +78,21 @@ void	move100(swap_list *nums)
 	a_args = nums->n_args;
 	sort_nums(nums, nums->column_a);
 	num_position(nums);
-	while (nums->n_args > 0)
+	while (nums->n_args > 5)
 	{
 		i = 0;
 		j = nums->n_args - 1;
-		while (nums->column_a[i] > sort20)
+		while (nums->column_a[i] > sort20 || nums->column_a[i] > a_args - 6)
 			i++;
-		while (nums->column_a[j] > sort20)
+		while (nums->column_a[j] > sort20 || nums->column_a[i] > a_args - 6)
 			j--;
 		if (i <= nums->n_args - j + 1)
 		{
-			if (nums->b_n_args > 60 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 60))
+			/* if (nums->b_n_args > 30 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 30))
 			{
 				rr(nums);
 				i--;
-			}
+			} */
 			while (i-- > 0)
 				ra(nums);
 		}
@@ -102,8 +102,8 @@ void	move100(swap_list *nums)
 				rra(nums);
 		}//placed_column_b(nums, nums->column_a[0], 0, nums->b_n_args - 1);
 		pb(nums);
-		if (nums->b_n_args > 60 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 60))
-			rb(nums);
+		/* if (nums->b_n_args > 30 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 30))
+			rb(nums); */
 		/* i = 0;
 		j = nums->b_n_args;
 		while (j > 0)
@@ -115,6 +115,8 @@ void	move100(swap_list *nums)
 		if (nums->n_args == a_args - sort20 + 1)
 			sort20 = sort20 + 30;
 	}
+	move5(nums, nums->column_a);
+	//sort20 = 30;
 	while (nums->b_n_args > 0)
 	{
 		i = 0;
@@ -135,6 +137,8 @@ void	move100(swap_list *nums)
 		}
 		placed_column_a(nums, nums->column_b[0], 0, nums->n_args - 1);
 		pa(nums);
+		/* if (sort20-- == 0)
+			sort20 = 30; */
 		/* i = 0;
 		j = nums->n_args;
 		while (j > 0)
@@ -144,11 +148,14 @@ void	move100(swap_list *nums)
 			j--;
 		} */
 	}
-	j = nums->n_args - 1;
-	while (nums->column_a[j] != 0)
-		j--;
-	while (j++ < nums->n_args)
-		rra(nums);
+	if (nums->column_a[0] != 0)
+	{
+		j = nums->n_args - 1;
+		while (nums->column_a[j] != 0)
+			j--;
+		while (j++ < nums->n_args)
+			rra(nums);	
+	}
 	//move5(nums, nums->column_a);
 	/* i = 0;
 	while (nums->column_b[i] > nums->column_b[i + 1])
