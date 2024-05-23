@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:11 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/22 19:04:58 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/23 14:30:24 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ void	move100(swap_list *nums)
 				rra(nums);
 		}//placed_column_b(nums, nums->column_a[0], 0, nums->b_n_args - 1);
 		pb(nums);
+		/* if ((nums->b_n_args <= 30 && nums->b_n_args > 1) && nums->column_b[0] < 15 && nums->column_b[1] > nums->column_b[0])
+			rb(nums); */
 		/* if (nums->b_n_args > 30 && (nums->column_b[0] < sort20 + 15 && nums->column_b[0] > 30))
 			rb(nums); */
 		/* i = 0;

@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:13:23 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/22 19:18:36 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/23 14:22:32 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	move500(swap_list *nums)
 	int	sort20;
 	int	a_args;
 
-	sort20 = 99;
+	sort20 = 169;
 	a_args = nums->n_args;
 	sort_nums(nums, nums->column_a);
 	num_position(nums);
@@ -33,7 +33,7 @@ void	move500(swap_list *nums)
 			j--;
 		if (i <= nums->n_args - j + 1)
 		{
-			/* if (nums->b_n_args > 100 && (nums->column_b[0] < sort20 + 50 && nums->column_b[0] > 100))
+			/* if ((nums->b_n_args <= 170 && nums->b_n_args > 1) && nums->column_b[0] < 85)
 			{
 				rr(nums);
 				i--;
@@ -47,8 +47,8 @@ void	move500(swap_list *nums)
 				rra(nums);
 		}//placed_column_b(nums, nums->column_a[0], 0, nums->b_n_args - 1);
 		pb(nums);
-		/* if (nums->b_n_args > 100 && (nums->column_b[0] < sort20 + 50 && nums->column_b[0] > 100))
-			rb(nums); */
+		if ((nums->b_n_args <= 170 && nums->b_n_args > 1) && nums->column_b[0] < 85 && nums->column_b[1] > nums->column_b[0])
+			rb(nums);
 		/* i = 0;
 		j = nums->b_n_args;
 		while (j > 0)
@@ -58,7 +58,7 @@ void	move500(swap_list *nums)
 			j--;
 		} */
 		if (nums->n_args == a_args - sort20 + 1)
-			sort20 = sort20 + 100;
+			sort20 = sort20 + 170;
 	}
 	move5(nums, nums->column_a);
 	sort20 = 30;
