@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:39 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/22 18:28:45 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/23 18:36:12 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,6 +168,7 @@ int	push_swap(int argc, char **argv)
 		return (free(nums), 0);
 	nums->n_args = n_args;
 	nums->b_n_args = 0;
+	nums->rot_b = 0;
 	argtoint(nums, argc, argv, i);
 	if (in_order(nums, nums->column_a) == 1)
 		return (1);
@@ -176,10 +177,10 @@ int	push_swap(int argc, char **argv)
 	else if (n_args <= 5 && n_args > 3)
 		move5(nums, nums->column_a);
 	else if (n_args <= 100 && n_args > 5)
-		move100(nums);
+		move100(nums, 0);
 	else if (n_args <= 500 && n_args > 100)
 		move500(nums);
-	/* i = 0;
+	i = 0;
 	n_args = nums->n_args;
 	while (n_args > 0)
 	{
@@ -187,7 +188,7 @@ int	push_swap(int argc, char **argv)
 		i++;
 		n_args--;
 	}
-	ft_printf("n_steps = %d\n", nums->n_steps); */
+	ft_printf("n_steps = %d\n", nums->n_steps);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gmunoz <gmunoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:46:57 by gmunoz            #+#    #+#             */
-/*   Updated: 2024/05/17 18:06:27 by gmunoz           ###   ########.fr       */
+/*   Updated: 2024/05/23 17:35:18 by gmunoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef  struct push_list
 	int	rr;
 	int	rrr;
 	int	n_steps;
+	int rot_b;
 }	swap_list;
 
 int	push_swap(int argc, char **argv);
@@ -52,7 +53,7 @@ void	pb(swap_list *nums);
 // arranging numbers
 void	move3(swap_list *nums, int *n);
 void	move5(swap_list *nums, int *n);
-void	move100(swap_list *nums);
+void	move100(swap_list *nums, int i);
 void	move500(swap_list *nums);
 void	hundred_move3(swap_list *nums, int *n, int i);
 void	hundred_move5(swap_list *nums, int *n, int i);
